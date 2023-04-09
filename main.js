@@ -103,11 +103,12 @@ function showInfo(event) {
     canvas.width = 100;
     canvas.height = 100;
     const ctx = canvas.getContext('2d');
+    let r=random()
     const data = {
-        labels: ['A', 'B', 'C'],
+        labels: ['потеря', 'прибыль'],
         datasets: [{
-            data: [10, 20, 30],
-            backgroundColor: ['red', 'blue', 'green']
+            data: [r.a, r.b],
+            backgroundColor: ['red', 'green']
         }]
     };
     const chart = new Chart(ctx, {
@@ -133,5 +134,13 @@ function showInfo(event) {
     });
 }
 
+function random() {
+    let data={a:0,b:0};
+    data.a=Math.floor(Math.random() * 101);
+    console.log(data)
+    data.b=100-data.a;
+    console.log(data)
+    return data;
+}
 
 Object.assign(window, {map})
