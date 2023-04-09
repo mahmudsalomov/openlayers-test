@@ -1,5 +1,5 @@
 import './style.css';
-import {Feature, Map, View} from 'ol';
+import {Feature, Map, Overlay, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import {TileWMS} from "ol/source";
@@ -13,14 +13,10 @@ import {
     Style,
     Text,
 } from 'ol/style';
-import {Point} from "ol/geom";
+// import {Chart} from "chart.js";
+import Chart from 'chart.js/auto';
 
-const iconFeature = new Feature({
-    geometry: new Point([0, 0]),
-    name: 'Null Island',
-    population: 4000,
-    rainfall: 500,
-});
+
 
 const iconStyle = new Style({
     image: new Icon({
@@ -29,12 +25,6 @@ const iconStyle = new Style({
         anchorYUnits: 'pixels',
         src: 'armatura.svg',
     }),
-});
-
-iconFeature.setStyle(iconStyle);
-
-const vectorSource = new VectorSource({
-    features: [iconFeature],
 });
 
 
@@ -51,19 +41,6 @@ const vectorPolygons = new VectorLayer({
         format: new GeoJSON(),
     }),
     style: function (feature) {
-        // Create a circle style for the point feature
-        // let circleStyle = new Style({
-        //     image: new CircleStyle({
-        //         radius: 5,
-        //         fill: new Fill({
-        //             color: 'red'
-        //         }),
-        //         stroke: new Stroke({
-        //             color: 'black',
-        //             width: 1
-        //         })
-        //     })
-        // });
         let circleStyle = iconStyle;
         // Create a Text style for the label
         let textStyle = new Style({
@@ -104,15 +81,57 @@ const map = new Map({
 map.on('singleclick', showInfo);
 
 function showInfo(event) {
-    let info = document.getElementById("info")
+    let info = document.getElementById("info");
     const features = map.getFeaturesAtPixel(event.pixel);
     if (features.length === 0) {
         info.innerHTML = '';
         return;
     }
     const properties = features[0].getProperties();
-    info.innerHTML=`<strong>Name: </strong><span>${properties["Name"]}</span>`
-    console.log(properties)
+    info.innerHTML=`<strong>Name: </strong><span>${properties["Name"]}</span>`;
+    console.log(properties);
+
+    // Create a new overlay with the pie chart
+    const overlay = new Overlay({
+        position: event.coordinate,
+        positioning: 'center-center',
+        element: document.createElement('div')
+    });
+
+    // Create the pie chart using Chart.js
+    const canvas = document.createElement('canvas');
+    canvas.width = 100;
+    canvas.height = 100;
+    const ctx = canvas.getContext('2d');
+    const data = {
+        labels: ['A', 'B', 'C'],
+        datasets: [{
+            data: [10, 20, 30],
+            backgroundColor: ['red', 'blue', 'green']
+        }]
+    };
+    const chart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: {
+            responsive: false,
+            legend: {
+                display: false
+            }
+        }
+    });
+
+    // Set the overlay element to be the pie chart canvas
+    overlay.getElement().appendChild(canvas);
+
+    // Add the overlay to the map
+    map.addOverlay(overlay);
+
+    // Remove the overlay when the user clicks outside of it
+    map.once('click', function() {
+        map.removeOverlay(overlay);
+    });
 }
+
 
 Object.assign(window, {map})
