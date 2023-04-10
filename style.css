@@ -10,3 +10,6 @@ html, body {
   bottom: 0;
   width: 100%;
 }
+.my-icon:hover {
+  cursor: pointer;
+}

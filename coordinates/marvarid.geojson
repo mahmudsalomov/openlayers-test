@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "Марварид",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "1-Марварид" }, "geometry": { "type": "Point", "coordinates": [ 66.194107336898995, 38.458505274454097, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "2-Марварид" }, "geometry": { "type": "Point", "coordinates": [ 66.184615054080894, 38.452389364373701, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "3-Марварид" }, "geometry": { "type": "Point", "coordinates": [ 66.192601170554795, 38.4652297126269, 0.0 ] } }
+]
+}

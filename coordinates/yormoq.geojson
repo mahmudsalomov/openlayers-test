@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Ёрмок",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "1-Ёрмок" }, "geometry": { "type": "Point", "coordinates": [ 66.245019861111103, 38.604984194444398, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "2-Ёрмок" }, "geometry": { "type": "Point", "coordinates": [ 66.238521964387402, 38.597219995246597, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "3-Ёрмок" }, "geometry": { "type": "Point", "coordinates": [ 66.224085595415104, 38.5961675530924, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "4-Ёрмок" }, "geometry": { "type": "Point", "coordinates": [ 66.215901754083703, 38.593535339094501, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "8-Ёрмок" }, "geometry": { "type": "Point", "coordinates": [ 66.233681489253897, 38.594501063874198, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "9ОЭ-Ёрмок" }, "geometry": { "type": "Point", "coordinates": [ 66.237571263800106, 38.592999802093097, 0.0 ] } }
+]
+}

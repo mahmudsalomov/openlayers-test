@@ -1,0 +1,20 @@
+{
+"type": "FeatureCollection",
+"name": "В.Бузахур",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "1-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.256058054432998, 38.464374898998202, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "2-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.223955283446401, 38.474143719626497, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "3-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.287413203811397, 38.481671645298398, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "4-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.232124417698998, 38.4522042774501, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "5-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.266271720742907, 38.489016196529199, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "6-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.271716225882898, 38.463277250524897, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "11-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.257001142893898, 38.464987804733603, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "12-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.258174416344602, 38.470780004955401, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "16-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.263681731781304, 38.487278377989199, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "17-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.259543639665395, 38.480408556010097, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "18-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.274104240508095, 38.484656418549001, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "19-В.Бузахур" }, "geometry": { "type": "Point", "coordinates": [ 66.269835176557805, 38.487599136501203, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "1-Карабай" }, "geometry": { "type": "Point", "coordinates": [ 66.276409551348294, 38.468126466727398, 0.0 ] } }
+]
+}

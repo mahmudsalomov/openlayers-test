@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using OpenLayers with Vite</title>
-  </head>
-  <body>
-    <div id="container" style="height: 90vh; overflow: hidden;position: relative;border: 1px solid">
-      <div id="map"></div>
-    </div>
-    <p id="info"></p>
-    <script type="module" src="./main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="https://liting.uz/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gas fields</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<body>
+<div id="btnGroup" class="btn-group" role="group" aria-label="Basic example">
+  <!--    <button onclick="a('buzaxur')" class="btn btn-success">buzaxur</button>-->
+  <!--    <button onclick="a('chunagar')" class="btn btn-success">chunagar</button>-->
+  <!--    <button onclick="a('marvarid')" class="btn btn-success">marvarid</button>-->
+  <!--    <button onclick="a('namazbay')" class="btn btn-success">namazbay</button>-->
+  <!--    <button onclick="a('niyoz')" class="btn btn-success">niyoz</button>-->
+  <!--    <button onclick="a('oydin')" class="btn btn-success">oydin</button>-->
+  <!--    <button onclick="a('shurtan')" class="btn btn-success">shurtan</button>-->
+  <!--    <button onclick="a('tandircha')" class="btn btn-success">tandircha</button>-->
+  <!--    <button onclick="a('vbuzaxur')" class="btn btn-success">vbuzaxur</button>-->
+  <!--    <button onclick="a('yormoq')" class="btn btn-success">yormoq</button>-->
+  <!--    <button onclick="a('zafar')" class="btn btn-success">zafar</button>-->
+  <label for="source-select">Выберите газовое месторождение:</label>
+  <select id="source-select">
+    <option value="">select</option>
+    <option value="buzaxur">buzaxur</option>
+    <option value="chunagar">chunagar</option>
+    <option value="marvarid">marvarid</option>
+    <option value="namazbay">namazbay</option>
+    <option value="niyoz">niyoz</option>
+    <option value="oydin">oydin</option>
+    <option value="shurtan">shurtan</option>
+    <option value="tandircha">tandircha</option>
+    <option value="vbuzaxur">vbuzaxur</option>
+    <option value="yormoq">yormoq</option>
+    <option value="zafar">zafar</option>
+  </select>
+  <button id="change-source-button">Изменить источник</button>
+</div>
+<div id="container" style="height: 95%; overflow: hidden;position: relative;border: 1px solid">
+  <div id="map"></div>
+</div>
+<!--    <p id="info"></p>-->
+<script type="module" src="./main.js"></script>
+</body>
 </html>

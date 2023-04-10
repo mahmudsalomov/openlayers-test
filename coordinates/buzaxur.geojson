@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+"name": "Бузахур",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": 1 }, "geometry": { "type": "Point", "coordinates": [ 66.143721782071694, 38.4807040634728, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 2 }, "geometry": { "type": "Point", "coordinates": [ 66.162048639429202, 38.4954401067532, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 3 }, "geometry": { "type": "Point", "coordinates": [ 66.144892710716803, 38.497317978151401, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 4 }, "geometry": { "type": "Point", "coordinates": [ 66.156990285066499, 38.462416035123397, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 5 }, "geometry": { "type": "Point", "coordinates": [ 66.175006195764794, 38.4862021658966, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 6 }, "geometry": { "type": "Point", "coordinates": [ 66.175657057612099, 38.505162990754499, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 7 }, "geometry": { "type": "Point", "coordinates": [ 66.123093248912795, 38.478146310929297, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 22 }, "geometry": { "type": "Point", "coordinates": [ 66.146746287162301, 38.476985502982899, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 23 }, "geometry": { "type": "Point", "coordinates": [ 66.152350840015401, 38.476954058981399, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 24 }, "geometry": { "type": "Point", "coordinates": [ 66.141430663182305, 38.481499358953201, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 25 }, "geometry": { "type": "Point", "coordinates": [ 66.149500795595202, 38.4802437945946, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 26 }, "geometry": { "type": "Point", "coordinates": [ 66.155415758048605, 38.479718635215001, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 28 }, "geometry": { "type": "Point", "coordinates": [ 66.149406430539699, 38.483437740876603, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 29 }, "geometry": { "type": "Point", "coordinates": [ 66.151686080889405, 38.486982185683601, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 30 }, "geometry": { "type": "Point", "coordinates": [ 66.157099298249705, 38.486247648205399, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 32 }, "geometry": { "type": "Point", "coordinates": [ 66.155969564255201, 38.489293653507801, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 33 }, "geometry": { "type": "Point", "coordinates": [ 66.160093322481899, 38.488685936352802, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 35 }, "geometry": { "type": "Point", "coordinates": [ 66.165820445529206, 38.4931557795408, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 36 }, "geometry": { "type": "Point", "coordinates": [ 66.158733762826799, 38.492975916723097, 0.0 ] } }
+]
+}

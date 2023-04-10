@@ -17,79 +17,17 @@ import {
 import Chart from 'chart.js/auto';
 
 
-
-const iconStyle = new Style({
-    image: new Icon({
-        anchor: [0.5, 46],
-        anchorXUnits: 'fraction',
-        anchorYUnits: 'pixels',
-        src: 'armatura.svg',
-    }),
-});
-
-
-const wmsSource = new TileWMS({
-    url: 'http://localhost:8080/geoserver/cite/wms',
-    params: {'LAYERS': 'cite:--point', 'TILED': true},
-    serverType: 'geoserver',
-    transition: 0,
-})
-
-const vectorPolygons = new VectorLayer({
-    source: new VectorSource({
-        url: './uz_liti_gaz.geojson',
-        format: new GeoJSON(),
-    }),
-    style: function (feature) {
-        let circleStyle = iconStyle;
-        // Create a Text style for the label
-        let textStyle = new Style({
-            text: new Text({
-                text: feature.get('Name').replace("-Шуртан",""),
-                fill: new Fill({
-                    color: 'black'
-                }),
-                stroke: new Stroke({
-                    color: 'white',
-                    width: 3
-                }),
-                offsetY: -10 // Offset the label above the feature
-            })
-        });
-        // Return an array of styles with the circle and text styles
-        return [circleStyle, textStyle];
-    }
-});
-
-const view = new View({
-    center: [66.00936586257896, 38.51123601575114],
-    zoom: 12,
-    projection: "EPSG:4326"
-});
-
-const map = new Map({
-    target: 'map',
-    layers: [
-        // new TileLayer({
-        //   source: new OSM()
-        // }),
-        vectorPolygons,
-    ],
-    view: view
-});
-
-map.on('singleclick', showInfo);
+let value="shurtan"
 
 function showInfo(event) {
-    let info = document.getElementById("info");
-    const features = map.getFeaturesAtPixel(event.pixel);
-    if (features.length === 0) {
-        info.innerHTML = '';
+
+    // Create a new overlay with the pie chart
+    // Check if the click was on the icon
+    const feature = map.getFeaturesAtPixel(event.pixel)[0];
+    if (!feature || feature.getGeometry().getType() !== 'Point') {
+        // Click was not on the icon, so do nothing
         return;
     }
-    const properties = features[0].getProperties();
-    info.innerHTML=`<strong>Name: </strong><span>${properties["Name"]}</span>`;
-    console.log(properties);
 
     // Create a new overlay with the pie chart
     const overlay = new Overlay({
@@ -97,13 +35,14 @@ function showInfo(event) {
         positioning: 'center-center',
         element: document.createElement('div')
     });
-
+    console.log(feature)
     // Create the pie chart using Chart.js
     const canvas = document.createElement('canvas');
     canvas.width = 100;
     canvas.height = 100;
+    canvas.textContent=feature.values_.Name
     const ctx = canvas.getContext('2d');
-    let r=random()
+    let r = random();
     const data = {
         labels: ['потеря', 'прибыль'],
         datasets: [{
@@ -132,6 +71,14 @@ function showInfo(event) {
     map.once('click', function() {
         map.removeOverlay(overlay);
     });
+    const pixel = map.getPixelFromCoordinate(event.coordinate);
+    map.forEachFeatureAtPixel(pixel, function(feature) {
+        const properties = feature.getProperties();
+        const name = properties['Name'];
+        const info = document.createElement('div');
+        info.innerHTML = '<strong>Имя:</strong> ' + name;
+        overlay.getElement().appendChild(info);
+    });
 }
 
 function random() {
@@ -143,4 +90,97 @@ function random() {
     return data;
 }
 
-Object.assign(window, {map})
+
+
+    const iconStyle = new Style({
+        image: new Icon({
+            anchor: [0.5, 46],
+            anchorXUnits: 'fraction',
+            anchorYUnits: 'pixels',
+            src: 'armatura.svg',
+            // size: [111, 170]
+        }),
+    });
+
+
+    const wmsSource = new TileWMS({
+        url: 'http://localhost:8080/geoserver/cite/wms',
+        params: {'LAYERS': 'cite:--point', 'TILED': true},
+        serverType: 'geoserver',
+        transition: 0,
+    })
+
+    const vectorPolygons = new VectorLayer({
+        source: new VectorSource({
+            url: './coordinates/'+value+'.geojson',
+            format: new GeoJSON(),
+        }),
+        style: function (feature) {
+            let circleStyle = iconStyle;
+            // Create a Text style for the label
+            let textStyle = new Style({
+                text: new Text({
+                    text: feature.get('Name').replace(/\D/g, ""),
+                    fill: new Fill({
+                        color: 'black'
+                    }),
+                    stroke: new Stroke({
+                        color: 'white',
+                        width: 3
+                    }),
+                    offsetY: -10 // Offset the label above the feature
+                })
+            });
+            // Return an array of styles with the circle and text styles
+            return [circleStyle, textStyle];
+        }
+    });
+
+    const view = new View({
+        center: [66.00936586257896, 38.51123601575114],
+        zoom: 12,
+        projection: "EPSG:4326"
+    });
+
+    const map = new Map({
+        target: 'map',
+        layers: [
+            // new TileLayer({
+            //   source: new OSM()
+            // }),
+            vectorPolygons,
+        ],
+        view: view
+    });
+
+    map.on('singleclick', showInfo);
+
+    map.on('pointermove', function(event) {
+        const feature = map.getFeaturesAtPixel(event.pixel)[0];
+        if (feature) {
+            iconStyle.getImage().setScale(1.5); // Increase scale factor on hover
+            map.getViewport().style.cursor = 'pointer'; // Set cursor to pointer
+        } else {
+            iconStyle.getImage().setScale(1); // Restore original scale factor
+            map.getViewport().style.cursor = ''; // Reset cursor
+        }
+    });
+
+
+function updateVectorSource(value) {
+    vectorPolygons.setSource(
+        new VectorSource({
+            url: './coordinates/' + value + '.geojson',
+            format: new GeoJSON(),
+        })
+    );
+}
+
+// Assign the updateVectorSource function to the click event of the button
+document.querySelector('#change-source-button').addEventListener('click', function() {
+    const value = document.querySelector('#source-select').value;
+    updateVectorSource(value);
+});
+
+    Object.assign(window, {map})
+

@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"name": "Чунагар",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": 1 }, "geometry": { "type": "Point", "coordinates": [ 66.160483333333303, 38.572386111111101, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 2 }, "geometry": { "type": "Point", "coordinates": [ 66.167763888888899, 38.5814083333333, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 3 }, "geometry": { "type": "Point", "coordinates": [ 66.150291666666703, 38.580891666666702, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 4 }, "geometry": { "type": "Point", "coordinates": [ 66.163541666666703, 38.560402777777803, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 5 }, "geometry": { "type": "Point", "coordinates": [ 66.176922222222203, 38.585744444444401, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 6 }, "geometry": { "type": "Point", "coordinates": [ 66.1457972222222, 38.572772222222198, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 7 }, "geometry": { "type": "Point", "coordinates": [ 66.1851972222222, 38.581722222222197, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 8 }, "geometry": { "type": "Point", "coordinates": [ 66.178247222222197, 38.592102777777797, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 9 }, "geometry": { "type": "Point", "coordinates": [ 66.138436111111105, 38.568019444444502, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 10 }, "geometry": { "type": "Point", "coordinates": [ 66.179541666666694, 38.579322222222203, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 15 }, "geometry": { "type": "Point", "coordinates": [ 66.153661111111106, 38.5756694444445, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 16 }, "geometry": { "type": "Point", "coordinates": [ 66.163783333333299, 38.577111111111101, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 17 }, "geometry": { "type": "Point", "coordinates": [ 66.159319444444407, 38.581283333333303, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 18 }, "geometry": { "type": "Point", "coordinates": [ 66.1566277777778, 38.57115, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 19 }, "geometry": { "type": "Point", "coordinates": [ 66.166544444444497, 38.581433333333301, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 20 }, "geometry": { "type": "Point", "coordinates": [ 66.162713888888902, 38.579725, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": 21 }, "geometry": { "type": "Point", "coordinates": [ 66.161441666666704, 38.574902777777801, 0.0 ] } }
+]
+}

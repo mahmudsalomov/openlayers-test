@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "Зафар???",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "1-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 65.979014333333296, 38.670338361111099, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "2-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 65.962093555555597, 38.651609, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "3-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 66.000334638888901, 38.673710777777799, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "4-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 65.985795722222207, 38.6513248611111, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "5-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 65.949715861111102, 38.659083388888902, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "6-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 65.985721333333302, 38.686790527777802, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "7-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 66.002663083333303, 38.6625651111111, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "8-Зафар" }, "geometry": { "type": "Point", "coordinates": [ 66.023858694444399, 38.679925333333301, 0.0 ] } }
+]
+}
